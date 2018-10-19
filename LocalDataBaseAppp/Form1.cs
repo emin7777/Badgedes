@@ -32,7 +32,7 @@ namespace LocalDataBaseAppp
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
-            MessageBox.Show("Daxil olundu..");
+            
             disp_data();
 
 
@@ -70,7 +70,7 @@ namespace LocalDataBaseAppp
             cmd.ExecuteNonQuery();
             con.Close();
 
-            MessageBox.Show("Melumat silindi !");
+            
             disp_data();
         }
 
@@ -83,7 +83,7 @@ namespace LocalDataBaseAppp
             cmd.ExecuteNonQuery();
             con.Close();
 
-            MessageBox.Show("Melumat yenilendi");
+            
             disp_data();
         }
 
@@ -122,5 +122,13 @@ namespace LocalDataBaseAppp
                 pictureBox3.ImageLocation = picPath;
             }
         }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            
+        }
+
+        
     }
 }
